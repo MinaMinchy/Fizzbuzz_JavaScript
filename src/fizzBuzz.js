@@ -1,15 +1,27 @@
-function Fizzbuzz() {
+function FizzBuzz() {
 
 }
 
 FizzBuzz.prototype.play = function(number) {
-  if (this._isDivisibleBy(3, number)) {
-     return 'Fizz';
-   } else if (this._isDivisibleBy(5, number)) {
-     return 'Buzz';
+  if (number % 5 === 0 && number % 3 === 0) {
+     return 'fizzbuzz';
    }
-};
+   else if (number % 3 === 0) {
+     return 'fizz';
+   }
 
-FizzBuzz.prototype._isDivisibleBy = function(divisor, number) {
-  return number % divisor === 0;
+   else if (number % 5 ==0) {
+    return 'buzz';
+   }
+
+   else {
+    return number;
+   };
+  };
+
+var fizzBuzz = new FizzBuzz();
+
+for (var i=0; i < 100; i++) {
+  console.log(fizzBuzz.play(i));
+
 };
